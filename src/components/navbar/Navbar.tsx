@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
         <div className="menuIcon">
           <img src="menu.png" alt="" onClick={handleOpenMenuClick} />
         </div>
-        <div className="menu">
+        <div className={open ? "menu active" : "menu"}>
           <a href="">Home</a>
           <a href="">About</a>
           <a href="">Contact</a>
