@@ -9,8 +9,8 @@ const SearchBar: React.FC = () => {
   const [searchVal, setSearchVal] = useState<SearchValues>({
     type: SearchBarConstants.BUY,
     location: "",
-    minPrice: 0,
-    maxPrice: 0,
+    minPrice: undefined,
+    maxPrice: undefined,
   });
 
   const handleInputChange = (
@@ -58,7 +58,7 @@ const SearchBar: React.FC = () => {
         />
         <input
           type="number"
-          name={"minPrice"}
+          name="minPrice"
           min={0}
           max={100000000}
           placeholder="Min Price"
