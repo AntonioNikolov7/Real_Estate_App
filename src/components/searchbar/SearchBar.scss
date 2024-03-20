@@ -58,8 +58,8 @@
       background-color: rgb(242, 217, 107);
       flex: 1;
       img {
-        // height: 24px;
-        width: 100%;
+        height: 24px;
+        width: 24px;
 
         @include lg {
           width: auto;
