@@ -6,7 +6,7 @@
 
   .listContainer {
     flex: 3;
-    height: 100vh;
+    height: calc(100vh - 100px);
     overflow-y: scroll;
     .wrapper {
       height: 100%;

@@ -37,5 +37,60 @@
         scale: 1.01;
       }
     }
+
+    .address {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: #888;
+    }
+    .price {
+      width: max-content;
+      font-size: 20px;
+      font-weight: 300;
+      padding: 4px;
+      border-radius: 4px;
+      background-color: rgb(244, 231, 171);
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      .features {
+        display: flex;
+        gap: 20px;
+        font-size: 14px;
+        .feature {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          background-color: whitesmoke;
+          padding: 6px;
+          border-radius: 4px;
+        }
+      }
+
+      .icons {
+        display: flex;
+        gap: 20px;
+
+        .icon {
+          border: 1px solid #999;
+          padding: 2px 5px;
+          border-radius: 6px;
+          align-items: center;
+          display: flex;
+          cursor: pointer;
+          justify-content: center;
+
+          &:hover {
+            background-color: whitesmoke;
+          }
+        }
+      }
+    }
   }
 }

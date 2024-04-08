@@ -18,14 +18,16 @@ const Card = ({ item }) => {
         <p className="price">$ {item.price}</p>
         <div className="bottom">
           <div className="features">
-            <img src="/bed.png" alt=""></img>
-            <span>{item.bedroom} bedroom</span>
+            <div className="feature">
+              <img src="/bed.png" alt=""></img>
+              <span>{item.bedroom} bedroom</span>
+            </div>
+            <div className="feature">
+              <img src="/bath.png" alt=""></img>
+              <span>{item.bathroom} bathroom</span>
+            </div>
           </div>
-          <div className="features">
-            <img src="/bath.png" alt=""></img>
-            <span>{item.bathroom} bathroom</span>
-          </div>
-          <div className="features">
+          <div className="icons">
             <div className="icon">
               <img src="/save.png" alt=""></img>
             </div>
