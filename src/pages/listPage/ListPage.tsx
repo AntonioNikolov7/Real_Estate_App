@@ -3,6 +3,7 @@ import "./ListPage.scss";
 import { listData } from "../../mock-data/mock-data";
 import Filter from "../../components/filter/Filter";
 import Card from "../../card/Card";
+import Map from "../../components/map/Map";
 const ListPage: React.FC = () => {
   const data = listData;
 
@@ -16,7 +17,9 @@ const ListPage: React.FC = () => {
           ))}
         </div>
       </div>
-      <div className="mapContainer">Map</div>
+      <div className="mapContainer">
+        <Map />
+      </div>
     </div>
   );
 };
