@@ -18,7 +18,7 @@ const ListPage: React.FC = () => {
         </div>
       </div>
       <div className="mapContainer">
-        <Map />
+        <Map items={data} />
       </div>
     </div>
   );
