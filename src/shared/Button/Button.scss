@@ -1,0 +1,55 @@
+.btn.btn-enable {
+  display: block;
+
+  width: 150px;
+
+  margin: 0 auto;
+
+  margin-top: 20px;
+
+  //   border: 1px solid #25729a;
+  border: none;
+  border-radius: 4px;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  background-color: #3093c7;
+
+  margin-bottom: 20px;
+
+  padding: 7px 7px 7px 7px;
+}
+
+.btn.btn-disabled {
+  display: block;
+
+  width: 150px;
+
+  margin: 0 auto;
+
+  margin-top: 20px;
+
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  border: 1px solid #25729a;
+
+  border-radius: 4px;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  background-color: #3093c7;
+
+  margin-bottom: 20px;
+
+  padding: 7px 7px 7px 7px;
+}
+
+.btn:hover {
+  scale: 1.05;
+}
