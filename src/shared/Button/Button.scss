@@ -1,55 +1,32 @@
-.btn.btn-enable {
+.btn {
   display: block;
-
   width: 150px;
-
   margin: 0 auto;
-
   margin-top: 20px;
-
-  //   border: 1px solid #25729a;
   border: none;
   border-radius: 4px;
-
   text-align: center;
-
   color: #ffffff;
-
   background-color: #3093c7;
-
   margin-bottom: 20px;
-
   padding: 7px 7px 7px 7px;
+
+  &:hover {
+    scale: 1.05;
+  }
 }
 
-.btn.btn-disabled {
-  display: block;
+.btn-enable {
+}
 
-  width: 150px;
+.btn-enable-form {
+  @extend .btn;
+  width: 96%;
+}
 
-  margin: 0 auto;
-
-  margin-top: 20px;
-
+.btn-disabled {
+  @extend .btn;
   opacity: 0.65;
-
   cursor: not-allowed;
-
   border: 1px solid #25729a;
-
-  border-radius: 4px;
-
-  text-align: center;
-
-  color: #ffffff;
-
-  background-color: #3093c7;
-
-  margin-bottom: 20px;
-
-  padding: 7px 7px 7px 7px;
-}
-
-.btn:hover {
-  scale: 1.05;
 }

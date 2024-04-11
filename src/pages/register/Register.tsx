@@ -9,17 +9,43 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Button from "../../shared/Button/Button";
+import { validateForm } from "./InputValidation";
 
 const Register = () => {
+  const [formValues, setFormValues] = React.useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    repeatPassword: "",
+  });
+
+  const [errors, setErrors] = React.useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    repeatPassword: "",
+  });
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    });
+  };
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      firstName: data.get("firstName"),
-      secondName: data.get("lastName"),
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+
+    const validationErrors = validateForm(formValues);
+    if (Object.keys(validationErrors).length === 0) {
+      console.log("Form submitted successfully:", formValues);
+      // You can submit the form here
+    } else {
+      setErrors(validationErrors);
+    }
   };
 
   return (
@@ -50,6 +76,9 @@ const Register = () => {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                onChange={handleChange}
+                error={!!errors.firstName}
+                helperText={errors.firstName}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -60,6 +89,9 @@ const Register = () => {
                 label="Last Name"
                 name="lastName"
                 autoComplete="family-name"
+                onChange={handleChange}
+                error={!!errors.lastName}
+                helperText={errors.lastName}
               />
             </Grid>
             <Grid item xs={12}>
@@ -70,6 +102,9 @@ const Register = () => {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={handleChange}
+                error={!!errors.email}
+                helperText={errors.email}
               />
             </Grid>
             <Grid item xs={12}>
@@ -81,10 +116,27 @@ const Register = () => {
                 type="password"
                 id="password"
                 autoComplete="new-password"
+                onChange={handleChange}
+                error={!!errors.password}
+                helperText={errors.password}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                name="repeat-password"
+                label="Repeat Password"
+                type="password"
+                id="repeat-password"
+                autoComplete="new-password"
+                onChange={handleChange}
+                error={!!errors.repeatPassword}
+                helperText={errors.repeatPassword}
               />
             </Grid>
           </Grid>
-          <Button name="Register" />
+          <Button name="Register" isForm={true} />
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="#" variant="body2">
